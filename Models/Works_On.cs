@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ORMCodeFirst.Models
 {
-    internal class Works_On
+    public class Works_On
     {
-        [ForeignKey]
+        [ForeignKey("Employee")]
         public int Essn { get; set; }
 
-        [ForeignKey]
+        [ForeignKey("Project")]
         public int Pno { get; set;}
         public int Hours { get; set; }
     }

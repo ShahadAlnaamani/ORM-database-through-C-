@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -7,13 +8,22 @@ using System.Threading.Tasks;
 
 namespace ORMCodeFirst.Models
 {
-    internal class Project
+    public class Project
     {
+        [Required]
+        [StringLength(50, MinimumLength = 2)]
         public string Pname { get; set; }
+
+        [Key]
+        [Required]  
         public int Pnumber { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 2)]
         public string PLocation { get; set; }
-        
-        [ForeignKey]
+
+        [Required]
+        [ForeignKey("Department")]
         public int Dnum { get; set; }
 
     }

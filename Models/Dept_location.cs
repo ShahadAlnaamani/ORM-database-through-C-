@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace ORMCodeFirst.Models
 {
-    internal class Dept_location
+    public class Dept_location
     {
-        [ForeignKey]
+        [ForeignKey("Department")]
+        [Required]
         public int Dnumber { get; set; }
 
-        [ForeignKey]
+        [Required]
         public string Location { get; set; }
     }
 }
