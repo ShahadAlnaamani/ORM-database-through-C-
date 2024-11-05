@@ -22,7 +22,11 @@ namespace ORMCodeFirst.Models
 
         [ForeignKey("Employee")]
         public int Mgr_SSN { get; set; }
+        public Employee Employee { get; set; }
 
         public DateOnly Mgr_Start_Date { get; set; }
+
+        public List<Employee> Employees { get; set; } //For works for relationship
+        public List<Project> Project { get; set; }
     }
 }

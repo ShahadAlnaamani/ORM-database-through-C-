@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace ORMCodeFirst.Models
 {
+    [PrimaryKey(nameof(Essn), nameof(Dependent_Name))]
     public class Dependent
     {
         [ForeignKey("Employee")]
         [Required]
         public int Essn { get; set  ; }
+        public Employee Employee { get; set; }
 
         [Required]
         public string Dependent_Name { get; set; }
