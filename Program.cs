@@ -1,10 +1,10 @@
-﻿namespace ORMCodeFirst
+﻿namespace CollegeSystem
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            CustomDbContext context = new CustomDbContext();
+            Console.WriteLine("Hello, World!");
         }
     }
 }
