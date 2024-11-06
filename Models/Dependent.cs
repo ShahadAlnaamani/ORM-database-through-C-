@@ -15,7 +15,7 @@ namespace ORMCodeFirst.Models
         [ForeignKey("Employee")]
         [Required]
         public int Essn { get; set  ; }
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
 
         [Required]
         public string Dependent_Name { get; set; }

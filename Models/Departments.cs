@@ -20,13 +20,16 @@ namespace ORMCodeFirst.Models
         [Required]
         public int Dnumber { get; set; }
 
-        [ForeignKey("Employee")]
+        [ForeignKey("Supervisor")]
         public int Mgr_SSN { get; set; }
-        public Employee Employee { get; set; }
+        public virtual Employee Supervisor { get; set; }
 
         public DateOnly Mgr_Start_Date { get; set; }
 
-        public List<Employee> Employees { get; set; } //For works for relationship
-        public List<Project> Project { get; set; }
+        [InverseProperty("Departments")]
+        public virtual ICollection<Employee> Employees { get; set; } //For works for relationship
+        public virtual ICollection<Project> Project { get; set; }
+        public virtual ICollection<Dept_location> Locations { get; set; }
+
     }
 }

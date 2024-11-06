@@ -16,6 +16,7 @@ namespace ORMCodeFirst.Models
         [ForeignKey("Department")]
         [Required]
         public int Dnumber { get; set; }
+        public virtual Department Department { get; set; }
 
         [Required]
         public string Location { get; set; }

@@ -25,7 +25,7 @@ namespace ORMCodeFirst.Models
         [Required]
         [ForeignKey("Department")]
         public int Dnum { get; set; }
-        public Department Department { get; set; }
-        public List<Works_On> Works_On { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<Works_On> Works_On { get; set; }
     }
 }

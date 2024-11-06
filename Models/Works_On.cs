@@ -13,12 +13,12 @@ namespace ORMCodeFirst.Models
     {
         [ForeignKey("Employee")]
         public int Essn { get; set; }
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
 
 
         [ForeignKey("Project")]
         public int Pno { get; set;}
-        public Project Project { get; set; }
+        public virtual Project Project { get; set; }
 
 
         public int Hours { get; set; }

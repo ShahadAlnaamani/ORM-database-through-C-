@@ -43,22 +43,24 @@ namespace ORMCodeFirst.Models
         public float Salary { get; set; }
         
 
-        [ForeignKey("Employee")]
+        [ForeignKey("Manager")]
         public int SuperSSN { get; set; }
-        public Employee employee { get; set; }
+        public virtual Employee Manager { get; set; }
 
 
-        [ForeignKey("Department")] //For Works for relationship 
+        [ForeignKey("Departments")] //For Works for relationship 
         public int Dno { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Departments { get; set; }
 
-        public List<Department> Departments { get; set; } //For manages relationship
+        [InverseProperty("Supervisor")]
+        public virtual ICollection<Department> Department { get; set; } //For manages relationship
        
-        public List<Works_On> Works_On { get; set; }
+        public virtual ICollection<Works_On> Works_On { get; set; }
 
-        public List<Dependent> Dependents { get; set; }
+        public virtual ICollection<Dependent> Dependents { get; set; }
 
-        public List<Employee> Employees { get; set; }
+        [InverseProperty("Manager")]
+        public virtual ICollection<Employee> Managers { get; set; }
 
     }
 }
